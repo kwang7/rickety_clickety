@@ -31,7 +31,7 @@ var changeHeading = function(){
 //changes text of heading back to normal after mousing away from item in the list
 var changeHeadingBack = function(){
     var h = document.getElementById('h');
-    h.innerHTML = 'Hello World';
+    h.innerHTML = 'Hello World!';
 };
 
 //removes item from list upon mouse-click
