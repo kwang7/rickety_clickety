@@ -26,16 +26,18 @@ b.addEventListener('click', addElement);
 var changeHeading = function(){
     var h = document.getElementById('h');
     h.innerHTML = this.innerHTML;
+    //console.log('heading has been changed');
 };
 
 //changes text of heading back to normal after mousing away from item in the list
 var changeHeadingBack = function(){
     var h = document.getElementById('h');
     h.innerHTML = 'Hello World!';
+    //console.log('heading has been changed back');
 };
 
-//removes item from list upon mouse-click
-var removeItem = function(){
+//removes element from list upon mouse-click
+var removeElement = function(){
     currElem -= 1;
     this.remove();
     var lis = document.getElementsByTagName('li');
@@ -43,13 +45,14 @@ var removeItem = function(){
     for (li = 0; li < lis.length; li++){
         lis[li].innerHTML = "item " + li;
     }
+    console.log(currElem + " items total");
 };
 
 //function to activate changeHeading, changeHeadingBack, and removeItem for an item
 var run = function(item){
     item.addEventListener('mouseover', changeHeading);
     item.addEventListener('mouseout', changeHeadingBack);
-    item.addEventListener('click', removeItem);
+    item.addEventListener('click', removeElement);
 };
 
 //creates an array of all elements in the list
