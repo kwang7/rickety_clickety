@@ -47,8 +47,10 @@ var addFib = function(){
         var lis = fibonaccilist.getElementsByTagName('li');
         var str1 = lis[lis.length - 1].innerHTML;
         var str2 = lis[lis.length - 2].innerHTML;
-        var num1 = parseInt(str1.substring(str1.length - 1));
-        var num2 = parseInt(str2.substring(str2.length - 1));
+	console.log(str1);
+	console.log(str2);
+        var num1 = parseInt(str1.substring(str1.indexOf(":")+2));
+	var num2 = parseInt(str2.substring(str2.indexOf(":")+2));
         var num = num1 + num2;
         elem.innerHTML = "fibonacci number " + currElem_fib + ": " + num;
     };
