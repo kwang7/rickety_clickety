@@ -1,8 +1,8 @@
 /*
-Rickety Clickety: Kelly Wang and Michael Ruvinshteyn
-SoftDev1 pd07
-HW#16: Sequential Progression
-2017-12-08  
+  Rickety Clickety: Kelly Wang and Michael Ruvinshteyn
+  SoftDev1 pd07
+  HW#16: Sequential Progression
+  2017-12-08  
 */
 
 //current last element number
@@ -46,7 +46,7 @@ var addFib = function(){
         var str1 = lis[lis.length - 1].innerHTML;
         var str2 = lis[lis.length - 2].innerHTML;
         var num1 = getNumber(str1);
-	    var num2 = getNumber(str2);
+	var num2 = getNumber(str2);
         var num = num1 + num2;
         elem.innerHTML = "fibonacci number " + currElem_fib + ": " + num;
     };
