@@ -26,31 +26,27 @@ var addElement = function(){
 var button_elem = document.getElementById("b");
 b.addEventListener('click', addElement);
 
-//fxn to find the nth fibonacci number
-var fibonacci = function (n){
-    if (n == 0)
-	return 0;
-    if (n == 1 || n == 2)
-	return 1;
-    else
-	return fibonacci(n-1) + fibonacci(n-2);
-};
+var getNumber = function(s){
+    var x = s.length - 1;
+    while (s.substring(x,x+1) != ' '){
+        x -= 1;
+    }
+    return parseInt(s.substring(x+1));
+}
 
 //adds nth fibonacci number upon button-press
 var addFib = function(){
     var elem = document.createElement("li");
     elem.setAttribute('id','fibitem');
     if (currElem_fib < 2){
-        elem.innerHTML =  "fibonacci number " + currElem_fib + ": " + fibonacci(currElem_fib);
+        elem.innerHTML =  "fibonacci number " + currElem_fib + ": " + currElem_fib;
     }
     else{
         var lis = fibonaccilist.getElementsByTagName('li');
         var str1 = lis[lis.length - 1].innerHTML;
         var str2 = lis[lis.length - 2].innerHTML;
-	console.log(str1);
-	console.log(str2);
-        var num1 = parseInt(str1.substring(str1.indexOf(":")+2));
-	var num2 = parseInt(str2.substring(str2.indexOf(":")+2));
+        var num1 = getNumber(str1);
+	    var num2 = getNumber(str2);
         var num = num1 + num2;
         elem.innerHTML = "fibonacci number " + currElem_fib + ": " + num;
     };
@@ -169,8 +165,8 @@ var removeElement = function(){
             else{
                 var str1 = lis[li - 1].innerHTML;
                 var str2 = lis[li - 2].innerHTML;
-                var num1 = parseInt(str1.substring(str1.length - 1));
-                var num2 = parseInt(str2.substring(str2.length - 1));
+                var num1 = getNumber(str1);
+                var num2 = getNumber(str2);
                 var num = num1 + num2;
                 lis[li].innerHTML = "fibonacci number " + li + ": " + num;
             };
